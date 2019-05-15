@@ -1,5 +1,6 @@
 package com.example.projekt;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static String  EXTRA_MESSAGE = " ";
     private String[] allaobjekt = {" "};
     private String[] allinfo = {" "};
     private int[] allinfo2 ={};
@@ -54,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String temp = minAdapter.getItem(i).info();
-                Toast.makeText(getApplicationContext(), temp, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, infoactivity.class);
+                intent.putExtra(EXTRA_MESSAGE, temp);
+                startActivity(intent);
             }
         });
 
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 // Construct the URL for the Internet service
-                URL url = new URL("http://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=brom"); //URL
+                URL url = new URL("http://wwwlab.iit.his.se/o18marka/JSONforAndroid/getdataasjson.json?type=brom"); //URL
 
                 // Create the request to the PHP-service, and open the connection
                 urlConnection = (HttpURLConnection) url.openConnection();
