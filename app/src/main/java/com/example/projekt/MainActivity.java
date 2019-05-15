@@ -31,11 +31,10 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     public static String  EXTRA_MESSAGE = " ";
-    private String[] allaobjekt = {" "};
-    private String[] allinfo = {" "};
-    private int[] allinfo2 ={};
+    private String[] Names = {" "};
     private ArrayList<String> listData;
     private ArrayAdapter<Minklass> minAdapter;
+    public String extended_fab_label="Test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         new FetchData().execute();//Hämtar datan
-        listData=new ArrayList<>(Arrays.asList(allaobjekt)); //Listar den hämtade datan i mountainNames fältet
+        listData=new ArrayList<>(Arrays.asList(Names)); //Listar den hämtade datan i mountainNames fältet
         minAdapter=new ArrayAdapter<Minklass>(this,R.layout.content_main,R.id.my_item);
 
         ListView my_listview=(ListView) findViewById(R.id.my_listview); //Skapar en listview
@@ -164,7 +163,11 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("brom", container.getString("name"));
                     Log.d("brom", container.getString("location"));
                     Log.d("brom", "" + container.getInt("size"));
-                    Minklass m = new Minklass(container.getString("name"), container.getString("location"), container.getInt("size"));
+                    Log.d("brom", "" + container.getString("category"));
+                    Log.d("brom", "" + container.getInt("company"));
+                    Log.d("brom", "" + container.getString("cost"));
+                    Log.d("brom", "" + container.getString("auxdata"));
+                    Minklass m = new Minklass(container.getString("name"), container.getString("location"), container.getInt("size"), container.getString("category"),container.getInt("company"),container.getString("cost"),container.getString("auxdata"));
                     Log.d("brom", m.toString());
                     minAdapter.add(m);
                 }
