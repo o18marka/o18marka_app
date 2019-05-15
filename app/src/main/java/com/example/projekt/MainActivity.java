@@ -64,8 +64,10 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                String temp = "\t\t\t\t\t\t\t\t\t\t\tAbout this App\n\nThank you for using ShipKnowledge! This app is for you who want easy access to knowledge about historical warships and be able to study on the go.\n\nTry your best to memorise these facts and have fun challenging yourself!";
+                Intent intent = new Intent(MainActivity.this, about.class);
+                intent.putExtra(EXTRA_MESSAGE, temp);
+                startActivity(intent);
             }
         });
     }

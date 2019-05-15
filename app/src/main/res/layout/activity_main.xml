@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:elevation="16dp"
-        android:text="Om"
+        android:text="About"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/fab"
