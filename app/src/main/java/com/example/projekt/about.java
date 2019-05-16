@@ -11,6 +11,9 @@ public class about extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         Intent intent = getIntent(); // Här
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE); //Här

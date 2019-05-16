@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         new FetchData().execute();//Hämtar datan
         listData=new ArrayList<>(Arrays.asList(Names)); //Listar den hämtade datan i mountainNames fältet
