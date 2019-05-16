@@ -13,9 +13,10 @@
         android:fontFamily="casual"
         android:padding="5dp"
         android:textSize="25sp"
+        android:textColor="@android:color/white"
         android:layout_margin="30dp"
         android:width="1080px"
-        android:background="#98eacc"
+        android:background="#3575a5"
         android:elevation="10dp" />
 
 
