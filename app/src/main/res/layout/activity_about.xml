@@ -7,17 +7,17 @@
     tools:context=".about">
 
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
         android:id="@+id/aboutText"
-        android:fontFamily="casual"
-        android:padding="5dp"
-        android:textSize="25sp"
-        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:width="1080px"
         android:background="#3575a5"
-        android:elevation="10dp" />
+        android:elevation="10dp"
+        android:fontFamily="casual"
+        android:padding="5dp"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
 
 
 </LinearLayout>
